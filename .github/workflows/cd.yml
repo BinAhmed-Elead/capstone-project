@@ -27,8 +27,8 @@ jobs:
           ssh -i ~/.ssh/github_actions $SSH_USERNAME@${{ matrix.nodes }} "
             docker kill web &&
             docker rm web &&
-            docker pull omirabbas/capstone-project &&
+            docker pull abdullahbinahmed/flask-app &&
             docker run -d -p 80:5000 \
               -e REDIS_HOST=${REDIS_HOST} \
               -e DB_HOST=${DB_HOST} \
-              --name web omirabbas/capstone-project"
+              --name web abdullahbinahmed/flask-app"
